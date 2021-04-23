@@ -1,0 +1,194 @@
+<mat-tab-group>
+  <mat-tab label="Registration">
+    <!-- Student Start -->
+    <mat-card>
+      <mat-card-header fxLayout="row" fxLayoutAlign="space-between start">
+        <h1 fxFlex="50" class="comp-font comp-font-title">
+          Student Registration
+        </h1>
+        <div fxFlex="50">
+          <button class="action-button" color="accent" mat-raised-button>
+            Clear
+          </button>
+          <button
+            class="action-button"
+            color="primary"
+            mat-raised-button
+            (click)="saveData()"
+          >
+            Save
+          </button>
+        </div>
+      </mat-card-header>
+      <mat-divider [inset]="true"></mat-divider>
+      <mat-card-content>
+        <div class="mat-content">
+          <mat-form-field class="width-30">
+            <input
+              type="text"
+              matInput
+              placeholder="Student No"
+              oninput="this.value = this.value.toUpperCase()"
+              [(ngModel)]="stdNo"
+            />
+          </mat-form-field>
+          <mat-form-field class="width-50">
+            <input
+              type="text"
+              matInput
+              placeholder="Student Name"
+              oninput="this.value = this.value.toUpperCase()"
+              [(ngModel)]="stdName"
+            />
+          </mat-form-field>
+          <div class="prof-img">
+            <img width="150px" src="../../../assets/images/prof_img.png" />
+          </div>
+        </div>
+
+        <div class="mat-content">
+          <mat-form-field class="width-50">
+            <input
+              type="text"
+              matInput
+              placeholder="Address"
+              [(ngModel)]="stdAddress"
+            />
+          </mat-form-field>
+          <mat-form-field class="width-30">
+            <mat-label>Date of Birth</mat-label>
+            <input matInput [matDatepicker]="picker" [(ngModel)]="dob" />
+            <mat-datepicker-toggle
+              matSuffix
+              [for]="picker"
+            ></mat-datepicker-toggle>
+            <mat-datepicker #picker startView="year"></mat-datepicker>
+          </mat-form-field>
+        </div>
+        <div class="mat-content">
+          <mat-form-field class="width-30">
+            <mat-label>Grade</mat-label>
+            <mat-select [(ngModel)]="grade">
+              <mat-option>None</mat-option>
+              <mat-option *ngFor="let state of grades" [value]="state">{{
+                state
+              }}</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field class="width-30">
+            <mat-label>Subject</mat-label>
+            <mat-select [(ngModel)]="subject">
+              <mat-option>None</mat-option>
+              <mat-option *ngFor="let state of subjects" [value]="state">{{
+                state
+              }}</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field class="width-30">
+            <input
+              type="text"
+              matInput
+              placeholder="School"
+              [(ngModel)]="school"
+            />
+          </mat-form-field>
+        </div>
+        <div class="mat-content">
+          <mat-form-field class="width-30">
+            <input
+              type="text"
+              matInput
+              placeholder="Gardian Name"
+              [(ngModel)]="gardianName"
+            />
+          </mat-form-field>
+          <mat-form-field class="width-30">
+            <input
+              type="text"
+              matInput
+              placeholder="Tel No"
+              [(ngModel)]="telNo"
+            />
+          </mat-form-field>
+          <mat-form-field class="width-30">
+            <input
+              type="text"
+              matInput
+              placeholder="Whatsapp No"
+              [(ngModel)]="whatsappNo"
+            />
+          </mat-form-field>
+        </div>
+      </mat-card-content>
+    </mat-card>
+    <!-- Student End -->
+  </mat-tab>
+  <mat-tab label="View">
+    <!-- View Start -->
+    <div class="mat-elevation-z8">
+      <table mat-table [dataSource]="dataSource">
+        <!-- Position Column -->
+        <ng-container matColumnDef="position">
+          <th mat-header-cell *matHeaderCellDef>No.</th>
+          <td mat-cell *matCellDef="let element">{{ element.position }}</td>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef>Name</th>
+          <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+        </ng-container>
+
+        <!-- Weight Column -->
+        <ng-container matColumnDef="weight">
+          <th mat-header-cell *matHeaderCellDef>Weight</th>
+          <td mat-cell *matCellDef="let element">{{ element.weight }}</td>
+        </ng-container>
+
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="symbol">
+          <th mat-header-cell *matHeaderCellDef>Symbol</th>
+          <td mat-cell *matCellDef="let element">{{ element.symbol }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="Edit">
+          <th mat-header-cell *matHeaderCellDef>Edit</th>
+          <td
+            mat-cell
+            *matCellDef="let element"
+          >
+            <button mat-flat-button color="accent">Edit</button>
+          </td>
+        </ng-container>
+        <ng-container matColumnDef="Delete">
+          <th mat-header-cell *matHeaderCellDef>Delete</th>
+          <td
+          mat-cell
+          *matCellDef="let element"
+          >
+            <button mat-flat-button color="warn">Delet</button>
+          </td>
+        </ng-container>
+        <ng-container matColumnDef="View">
+          <th mat-header-cell *matHeaderCellDef>View</th>
+          <td
+          mat-cell
+          *matCellDef="let element"
+        >
+            <button mat-flat-button color="primary">View</button>
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+      </table>
+
+      <mat-paginator
+        [pageSizeOptions]="[8, 10, 20]"
+        showFirstLastButtons
+      ></mat-paginator>
+    </div>
+
+    <!-- View End -->
+  </mat-tab>
+</mat-tab-group>

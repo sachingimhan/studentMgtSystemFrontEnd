@@ -1,0 +1,19 @@
+.main-container{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+.nav-container{
+    background-color: #5b32a3;
+}
+.menu-btn{
+    display: block;
+    width: 230px;
+    height: 50px;
+    margin-bottom: 10px;
+    color: #fff;
+    text-align: center;
+    font-size: 17px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+}

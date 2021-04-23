@@ -1,0 +1,24 @@
+<app-header (isOPend)="sidenav.toggle()"></app-header>
+<mat-sidenav-container [hasBackdrop]="false" class="main-container">
+  <mat-sidenav #sidenav mode="side" class="nav-container">
+    <button routerLink="overview" class="menu-btn" mat-button>
+      <mat-icon>dashboard</mat-icon>
+      Dashboard
+    </button>
+    <button routerLink="student" class="menu-btn" mat-button>
+      <mat-icon>people</mat-icon>
+      Student
+    </button>
+    <button class="menu-btn" mat-button>
+      <mat-icon>book</mat-icon>
+      Exams
+    </button>
+    <button class="menu-btn" mat-button>
+      <mat-icon>summarize</mat-icon>
+      Report
+    </button>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

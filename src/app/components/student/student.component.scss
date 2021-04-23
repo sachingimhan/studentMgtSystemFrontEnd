@@ -1,0 +1,52 @@
+.comp-font {
+  font-family: "Poppins", sans-serif;
+}
+.comp-font-title {
+  font-weight: 600;
+}
+.comp-font-normal {
+  font-weight: 500;
+}
+.mat-content {
+  margin-left: 30px;
+  margin-top: 20px;
+}
+table {
+  width: 100%;
+}
+.action-button{
+  float: right;
+  margin-right: 20px;
+  width: 10em !important;
+}
+.action-contaner{
+ display: table-cell;
+ width: inherit;
+}
+.prof-img{
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-top: 90px;
+  margin-right: 25px;
+  width: 150px;
+  height: 150px;
+  border-radius: 100%;
+}
+.full-width {
+  width: 100%;
+}
+.width-30 {
+  width: 30%;
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+.width-50 {
+  width: 50%;
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
